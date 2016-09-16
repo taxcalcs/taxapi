@@ -4,7 +4,7 @@
 
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>2016.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>taxapi</name>
 	<url>https://github.com/admiralsmaster/taxapi</url>
@@ -30,14 +30,24 @@
 	</developers>
 	<scm>
 		<connection>scm:git:https://github.com/admiralsmaster/taxapi.git</connection>
-    	<developerConnection>scm:git:https://admiralsmaster@github.com/admiralsmaster/taxapi.git</developerConnection>
-    	<url>https://github.com/admiralsmaster/taxapi.git</url>
+		<developerConnection>scm:git:https://admiralsmaster@github.com/admiralsmaster/taxapi.git</developerConnection>
+		<url>https://github.com/admiralsmaster/taxapi.git</url>
 	</scm>
-	
+
 	<properties>
 		<project.java.version>1.7</project.java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<dependencies>
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -50,7 +60,7 @@
 					<target>${project.java.version}</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>

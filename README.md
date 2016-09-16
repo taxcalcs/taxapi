@@ -1,9 +1,13 @@
 # taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi)
-Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/
+Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.
+Please note the terms of use from this website.
 
-This artifact contains a xsd and the generated JAXB classes for the service answer.
+This artifact contains a XSD and the generated JAXB classes for the service answer.
 
 ## Generated Classes
+
+You can use this classes to marshal the result.
+
 ```
 info.kuechler.bmf.taxapi.Lohnsteuer
 info.kuechler.bmf.taxapi.Eingabe
@@ -11,11 +15,22 @@ info.kuechler.bmf.taxapi.Ausgabe
 info.kuechler.bmf.taxapi.Type
 ```
 
+## URLs
+
+TaxApiFactory is a class to provide the test URLs which returns the XML.
+
+```
+// returns "https://www.bmf-steuerrechner.de/interface/2016V1.jsp"
+TaxApiFactory.getUrl(0, 2016);
+```
+
 ## Example Answer
+
+From: https://www.bmf-steuerrechner.de/
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<lohnsteuer jahr="2016" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://kuechler.info/bmf/taxapi"
-	xsi:schemaLocation="http://kuechler.info/bmf/taxapi taxapi.xsd">
+<lohnsteuer jahr="2016">
 	<eingaben>
 		<eingabe name="STKL" value="1" status="ok" />
 		<eingabe name="LZZ" value="1" status="ok" />
