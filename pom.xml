@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>info.kuechler.bmf.taxapi</groupId>
+	<artifactId>taxapi</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>taxapi</name>
+	<url>https://github.com/admiralsmaster/taxapi</url>
+	<description>Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/</description>
+
+	<inceptionYear>2016</inceptionYear>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/admiralsmaster/taxapi/issues</url>
+	</issueManagement>
+	<licenses>
+		<license>
+			<distribution>repo</distribution>
+			<name>The MIT License (MIT)</name>
+			<url>http://opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Ariel Küchler</name>
+			<url>https://github.com/admiralsmaster</url>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:https://github.com/admiralsmaster/taxapi.git</connection>
+    	<developerConnection>scm:git:https://admiralsmaster@github.com/admiralsmaster/taxapi.git</developerConnection>
+    	<url>https://github.com/admiralsmaster/taxapi.git</url>
+	</scm>
+	
+	<properties>
+		<project.java.version>1.7</project.java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${project.java.version}</source>
+					<target>${project.java.version}</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.13.1</version>
+				<configuration>
+					<locale>en</locale>
+					<args>
+						<arg>-Xxew</arg>
+						<arg>-Xxew:instantiate lazy</arg>
+					</args>
+					<plugins>
+						<plugin>
+							<groupId>com.github.jaxb-xew-plugin</groupId>
+							<artifactId>jaxb-xew-plugin</artifactId>
+							<version>1.7</version>
+						</plugin>
+					</plugins>
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
