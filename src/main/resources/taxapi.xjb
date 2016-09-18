@@ -7,15 +7,5 @@
         <schemaBindings>
             <package name="info.kuechler.bmf.taxapi"/>
         </schemaBindings>    
-        <bindings node="//xs:complexType[@name='ausgabe']">
-            <bindings node=".//xs:attribute[@name='value']">
-                <property name="valueOutput"/>
-            </bindings>
-        </bindings>
-        <bindings node="//xs:complexType[@name='eingabe']">
-            <bindings node=".//xs:attribute[@name='value']">
-                <property name="valueInput"/>
-            </bindings>
-        </bindings>
     </bindings>
 </bindings>

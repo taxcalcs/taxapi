@@ -1,6 +1,5 @@
-<xs:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified" attributeFormDefault="unqualified"
-	targetNamespace="http://kuechler.info/bmf/taxapi" xmlns:taxapi="http://kuechler.info/bmf/taxapi">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:simpleType name="type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="STANDARD" />
@@ -14,41 +13,33 @@
 	</xs:simpleType>
 	<xs:complexType name="eingaben">
 		<xs:sequence>
-			<xs:element type="taxapi:eingabe" name="eingabe"
-				maxOccurs="unbounded" minOccurs="0" />
+			<xs:element type="eingabe" name="eingabe" maxOccurs="unbounded"
+				minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="eingabe">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="name" use="required" />
-				<xs:attribute type="xs:decimal" name="value" use="required" />
-				<xs:attribute type="xs:string" name="status" use="optional" />
-			</xs:extension>
-		</xs:simpleContent>
+		<xs:attribute type="xs:string" name="name" use="required" />
+		<xs:attribute type="xs:decimal" name="value" use="required" />
+		<xs:attribute type="xs:string" name="status" use="optional" />
 	</xs:complexType>
 	<xs:complexType name="ausgaben">
 		<xs:sequence>
-			<xs:element name="ausgabe" type="taxapi:ausgabe"
-				maxOccurs="unbounded" minOccurs="0" />
+			<xs:element name="ausgabe" type="ausgabe" maxOccurs="unbounded"
+				minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ausgabe">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute type="xs:string" name="name" use="required" />
-				<xs:attribute type="xs:decimal" name="value" use="required" />
-				<xs:attribute name="type" type="taxapi:type" use="optional" />
-			</xs:extension>
-		</xs:simpleContent>
+		<xs:attribute type="xs:string" name="name" use="required" />
+		<xs:attribute type="xs:decimal" name="value" use="required" />
+		<xs:attribute name="type" type="type" use="optional" />
 	</xs:complexType>
 	<xs:element name="lohnsteuer">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="eingaben" type="taxapi:eingaben" />
-				<xs:element name="ausgaben" type="taxapi:ausgaben" />
+				<xs:element name="eingaben" type="eingaben" />
+				<xs:element name="ausgaben" type="ausgaben" />
 			</xs:sequence>
-			<xs:attribute name="jahr" type="taxapi:year" use="optional" />
+			<xs:attribute name="jahr" type="year" use="optional" />
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

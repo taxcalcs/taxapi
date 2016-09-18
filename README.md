@@ -1,6 +1,7 @@
 # taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi)
 Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.
-Please note the terms of use from this website.
+
+Please respect the terms of use of this website.
 
 This artifact contains a XSD and the generated JAXB classes for the service answer.
 
