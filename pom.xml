@@ -4,9 +4,40 @@
 
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2016.0.0-SNAPSHOT</version>
+	<version>2016.0.0</version>
 	<packaging>jar</packaging>
 	<name>taxapi</name>
+
+	<!-- 
+		settings for maven central and sign:
+		
+		<settings>
+			<servers>
+				<server>
+					<id>ossrh</id>
+					<username>username</username>
+					<password>password</password>
+				</server>
+			</servers>
+			<profiles>
+				<profile>
+					<id>ossrh</id>
+					<activation>
+						<activeByDefault>true</activeByDefault>
+					</activation>
+					<properties>
+						<gpg.executable>/usr/local/bin/gpg</gpg.executable>
+						<gpg.passphrase>passphrase</gpg.passphrase>
+					</properties>
+				</profile>
+			</profiles>
+		</settings>
+
+		release into maven central:
+		mvn clean deploy -P release, <autoReleaseAfterClose> have to set to "false"
+		mvn nexus-staging:release -P release
+	 -->
+
 	<url>https://github.com/admiralsmaster/taxapi</url>
 	<description>Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/</description>
 
@@ -90,4 +121,114 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<!-- profile for release, local development is faster w/o this plugins -->
+			<id>release</id>
+
+			<!-- snapshot repository for release -->
+			<distributionManagement>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement>
+
+			<build>
+				<plugins>
+
+					<!-- right java version, no release with higher java version -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-enforcer-plugin</artifactId>
+						<version>1.4.1</version>
+						<executions>
+							<execution>
+								<id>display-info</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>display-info</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>enforce-versions</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>enforce</goal>
+								</goals>
+								<configuration>
+									<rules>
+										<requireJavaVersion>
+											<version>[${project.java.version},1.8)</version>
+										</requireJavaVersion>
+									</rules>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- create source jar -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- create javadoc jar -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.10.4</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- sign files -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- plugin for release -->
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.7</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>false</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
