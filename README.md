@@ -18,6 +18,13 @@ Use the maven dependency:
 </dependency>
 ```
 
+```
+InputStream in = ...; // TODO
+JAXBContext context = JAXBContext.newInstance(Lohnsteuer.class);
+Unmarshaller unmarshaller = context.createUnmarshaller();
+Lohnsteuer result = (Lohnsteuer) unmarshaller.unmarshal(inputStream);
+```
+
 ## Generated Classes
 
 You can use this classes to marshal the result.
