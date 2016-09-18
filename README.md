@@ -1,10 +1,22 @@
-# taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8033ff7d9d3446e7b6b4320f43e74221)](https://www.codacy.com/app/github-ariel/taxapi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=admiralsmaster/taxapi&amp;utm_campaign=Badge_Grade)
+# taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8033ff7d9d3446e7b6b4320f43e74221)](https://www.codacy.com/app/github-ariel/taxapi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=admiralsmaster/taxapi&amp;utm_campaign=Badge_Grade) [![version](https://img.shields.io/maven-central/v/info.kuechler.bmf.taxapi/taxapi.svg)](http://search.maven.org/#search|gav|1|g%3A%22info.kuechler.bmf.taxapi%22%20AND%20a%3A%22taxapi%22) 
 
 Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.
 
 Please respect the terms of use of this website.
 
 This artifact contains a XSD and the generated JAXB classes for the service answer.
+
+## Usage
+
+Use the maven dependency:
+
+```
+<dependency>
+	<groupId>info.kuechler.bmf.taxapi</groupId>
+	<artifactId>taxapi</artifactId>
+	<version>2016.0.0</version>
+</dependency>
+```
 
 ## Generated Classes
 
