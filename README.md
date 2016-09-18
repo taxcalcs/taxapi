@@ -1,4 +1,5 @@
-# taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi)
+# taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8033ff7d9d3446e7b6b4320f43e74221)](https://www.codacy.com/app/github-ariel/taxapi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=admiralsmaster/taxapi&amp;utm_campaign=Badge_Grade)
+
 Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.
 
 Please respect the terms of use of this website.
