@@ -2,15 +2,17 @@
 
 Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.
 
-Please respect the terms of use of this website.
+Please respect the terms of use of this website (for tests only).
 
 This artifact contains a XSD and the generated JAXB classes for the service answer.
+
+For tax calculation in your project see project [taxcalculator](https://github.com/admiralsmaster/taxcalculator).
 
 ## Usage
 
 Use the maven dependency:
 
-```
+```xml
 <dependency>
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
@@ -18,7 +20,7 @@ Use the maven dependency:
 </dependency>
 ```
 
-```
+```java
 InputStream in = ...; // TODO
 JAXBContext context = JAXBContext.newInstance(Lohnsteuer.class);
 Unmarshaller unmarshaller = context.createUnmarshaller();
@@ -29,7 +31,7 @@ Lohnsteuer result = (Lohnsteuer) unmarshaller.unmarshal(inputStream);
 
 You can use this classes to marshal the result.
 
-```
+```java
 info.kuechler.bmf.taxapi.Lohnsteuer
 info.kuechler.bmf.taxapi.Eingabe
 info.kuechler.bmf.taxapi.Ausgabe
@@ -40,7 +42,7 @@ info.kuechler.bmf.taxapi.Type
 
 TaxApiFactory is a class to provide the test URLs which returns the XML.
 
-```
+```java
 // returns "https://www.bmf-steuerrechner.de/interface/2016V1.jsp"
 TaxApiFactory.getUrl(0, 2016);
 ```
@@ -49,7 +51,7 @@ TaxApiFactory.getUrl(0, 2016);
 
 From: https://www.bmf-steuerrechner.de/
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <lohnsteuer jahr="2016">
 	<eingaben>
