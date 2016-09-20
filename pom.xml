@@ -4,12 +4,12 @@
 
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2016.0.0</version>
+	<version>2016.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>taxapi</name>
 
 	<!-- 
-		settings for maven central and sign:
+		settings.xml for maven central, sign and github site deployment:
 		
 		<settings>
 			<servers>
@@ -18,6 +18,11 @@
 					<username>username</username>
 					<password>password</password>
 				</server>
+				<server>
+					<id>github</id>
+					<username>username</username>
+					<password>password</password> 
+				</server> 
 			</servers>
 			<profiles>
 				<profile>
@@ -36,8 +41,10 @@
 		release into maven central:
 		mvn clean deploy -P release, <autoReleaseAfterClose> have to set to "false"
 		mvn nexus-staging:release -P release
+		
+		Deploy site to github:
+		mvn clean site
 	 -->
-
 	<url>https://github.com/admiralsmaster/taxapi</url>
 	<description>Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/</description>
 
@@ -50,7 +57,7 @@
 		<license>
 			<distribution>repo</distribution>
 			<name>The MIT License (MIT)</name>
-			<url>http://opensource.org/licenses/mit-license.php</url>
+			<url>https://opensource.org/licenses/mit-license.php</url>
 		</license>
 	</licenses>
 	<developers>
@@ -119,8 +126,61 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- site deployment to github -->
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+						<configuration>
+							<server>github</server>
+							<message>Building site</message>
+							<path>${site.path}</path>
+							<merge>true</merge>
+							<repositoryName>taxapi</repositoryName>
+							<repositoryOwner>admiralsmaster</repositoryOwner>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.9</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>javadoc</report>
+							<report>test-javadoc</report>
+						</reports>
+					</reportSet>
+					<reportSet>
+						<id>aggregate</id>
+						<inherited>false</inherited>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 
 	<profiles>
 		<profile>
