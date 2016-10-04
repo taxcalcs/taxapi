@@ -21,7 +21,7 @@ Use the maven dependency:
 <dependency>
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2016.0.0</version>
+	<version>2016.0.1</version>
 </dependency>
 ```
 or [other build tools](https://admiralsmaster.github.io/taxapi/dependency-info.html)
@@ -87,3 +87,8 @@ From: https://www.bmf-steuerrechner.de/
 	</ausgaben>
 </lohnsteuer>
 ```
+
+## Changelog
+
+* 2016.0.1 October 4th, 2016: Make objects serializable
+* 2016.0.0 September 18th, 2016: Initial Version
