@@ -9,16 +9,21 @@ public class TaxApiFactory {
         if (year < 2006 || month > 12 || month < 0) {
             throw new IllegalArgumentException("Month have to be between 0 and 12, year >= 2006");
         }
-        if (year == 2011 || year == 2015) {
+        switch (year) {
+        case 2011:
+        case 2015: {
             if (month == 12 || month == 0) {
                 return Integer.toString(year) + "Dez";
             }
             return Integer.toString(year) + "bisNov";
         }
-        if (year >= 2016) {
-            return "2016V1";
+        case 2016:
+            return Integer.toString(year) + "V1";
+        case 2017:
+            return "LSt" + Integer.toString(year);
+        default:
+            return Integer.toString(year);
         }
-        return Integer.toString(year);
     }
 
     private TaxApiFactory() {

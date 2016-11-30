@@ -22,7 +22,7 @@ public class TaxApiFactoryTest {
     @Parameter(value = 2)
     public String year;
 
-    @Parameters
+    @Parameters(name="[{index}] {1}.{2}")
     public static Collection<String[]> data() {
         return Arrays.asList(new String[][] { //
                         { "https://www.bmf-steuerrechner.de/interface/2006.jsp", "0", "2006" },
@@ -41,7 +41,9 @@ public class TaxApiFactoryTest {
                         { "https://www.bmf-steuerrechner.de/interface/2015bisNov.jsp", "1", "2015" },
                         { "https://www.bmf-steuerrechner.de/interface/2015Dez.jsp", "0", "2015" },
 
-                        { "https://www.bmf-steuerrechner.de/interface/2016V1.jsp", "0", "2016" }
+                        { "https://www.bmf-steuerrechner.de/interface/2016V1.jsp", "0", "2016" },
+                        
+                        { "https://www.bmf-steuerrechner.de/interface/LSt2017.jsp", "0", "2017" }
 
         });
     }
