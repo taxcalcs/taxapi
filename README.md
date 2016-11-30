@@ -21,7 +21,7 @@ Use the maven dependency:
 <dependency>
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2016.0.1</version>
+	<version>2017.0.0</version>
 </dependency>
 ```
 or [other build tools](https://admiralsmaster.github.io/taxapi/dependency-info.html)
@@ -50,8 +50,8 @@ info.kuechler.bmf.taxapi.Type
 TaxApiFactory is a class to provide the test URLs which returns the XML.
 
 ```java
-// returns "https://www.bmf-steuerrechner.de/interface/2016V1.jsp"
-TaxApiFactory.getUrl(0, 2016);
+// returns "http://www.bmf-steuerrechner.de/interface/LSt2017.jsp"
+TaxApiFactory.getUrl(0, 2017);
 ```
 
 ## Example Answer
@@ -60,35 +60,36 @@ From: https://www.bmf-steuerrechner.de/
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<lohnsteuer jahr="2016">
-	<eingaben>
-		<eingabe name="STKL" value="1" status="ok" />
-		<eingabe name="LZZ" value="1" status="ok" />
-		<eingabe name="RE4" value="2500000" status="ok" />
-	</eingaben>
-	<ausgaben>
-		<ausgabe name="BK" value="0" type="STANDARD" />
-		<ausgabe name="BKS" value="0" type="STANDARD" />
-		<ausgabe name="BKV" value="0" type="STANDARD" />
-		<ausgabe name="LSTLZZ" value="267400" type="STANDARD" />
-		<ausgabe name="SOLZLZZ" value="14707" type="STANDARD" />
-		<ausgabe name="SOLZS" value="0" type="STANDARD" />
-		<ausgabe name="SOLZV" value="0" type="STANDARD" />
-		<ausgabe name="STS" value="0" type="STANDARD" />
-		<ausgabe name="STV" value="0" type="STANDARD" />
-		<ausgabe name="VKVLZZ" value="0" type="STANDARD" />
-		<ausgabe name="VKVSONST" value="0" type="STANDARD" />
-		<ausgabe name="VFRB" value="100000" type="DBA" />
-		<ausgabe name="VFRBS1" value="0" type="DBA" />
-		<ausgabe name="VFRBS2" value="0" type="DBA" />
-		<ausgabe name="WVFRB" value="1177200" type="DBA" />
-		<ausgabe name="WVFRBO" value="0" type="DBA" />
-		<ausgabe name="WVFRBM" value="0" type="DBA" />
-	</ausgaben>
+  <lohnsteuer jahr="2017">
+  <eingaben>
+    <eingabe name="STKL" value="1" status="ok" />
+    <eingabe name="LZZ" value="1" status="ok" />
+    <eingabe name="RE4" value="2500000" status="ok" />
+  </eingaben>
+  <ausgaben>
+    <ausgabe name="BK" value="0" type="STANDARD" />
+    <ausgabe name="BKS" value="0" type="STANDARD" />
+    <ausgabe name="BKV" value="0" type="STANDARD" />
+    <ausgabe name="LSTLZZ" value="260100" type="STANDARD" />
+    <ausgabe name="SOLZLZZ" value="14305" type="STANDARD" />
+    <ausgabe name="SOLZS" value="0" type="STANDARD" />
+    <ausgabe name="SOLZV" value="0" type="STANDARD" />
+    <ausgabe name="STS" value="0" type="STANDARD" />
+    <ausgabe name="STV" value="0" type="STANDARD" />
+    <ausgabe name="VKVLZZ" value="0" type="STANDARD" />
+    <ausgabe name="VKVSONST" value="0" type="STANDARD" />
+    <ausgabe name="VFRB" value="100000" type="DBA" />
+    <ausgabe name="VFRBS1" value="0" type="DBA" />
+    <ausgabe name="VFRBS2" value="0" type="DBA" />
+    <ausgabe name="WVFRB" value="1148500" type="DBA" />
+    <ausgabe name="WVFRBO" value="0" type="DBA" />
+    <ausgabe name="WVFRBM" value="0" type="DBA" />
+  </ausgaben>
 </lohnsteuer>
 ```
 
 ## Changelog
 
+* 2017.0.0 November 30th, 2016: update to 2017
 * 2016.0.1 October 4th, 2016: Make objects serializable
 * 2016.0.0 September 18th, 2016: Initial Version
