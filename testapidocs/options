@@ -1,0 +1,26 @@
+-classpath
+'/Users/akuechler/git/taxapi/target/classes:/Users/akuechler/git/taxapi/target/test-classes:/Users/akuechler/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/akuechler/.m2/repository/junit/junit/4.12/junit-4.12.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/akuechler/git/taxapi/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2016. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/akuechler/git/taxapi/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'taxapi 2017.0.0 Test API'
+-link
+'../apidocs'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' '/Users/akuechler/git/taxapi/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'taxapi 2017.0.0 Test API'

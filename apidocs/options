@@ -1,0 +1,22 @@
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/akuechler/git/taxapi/src/main/java:/Users/akuechler/git/taxapi/target/generated-sources/xjc'
+-author
+-bottom
+'Copyright &#169; 2016. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/akuechler/git/taxapi/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'taxapi 2017.0.0 API'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' '/Users/akuechler/git/taxapi/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'taxapi 2017.0.0 API'
