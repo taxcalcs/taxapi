@@ -10,7 +10,7 @@ This artifact contains a XSD and the generated JAXB classes for the service answ
 
 [Site](https://admiralsmaster.github.io/taxapi/)
 
-For tax calculation in your project see project [taxcalculator](https://github.com/admiralsmaster/taxcalculator). For a own test server see [taxserver](https://github.com/admiralsmaster/taxserver).
+For tax calculation in your project see project [taxcalculator](https://github.com/admiralsmaster/taxcalculator).
 
 
 ## Usage
