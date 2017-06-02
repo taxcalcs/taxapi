@@ -55,7 +55,6 @@
 	</issueManagement>
 	<licenses>
 		<license>
-			<distribution>repo</distribution>
 			<name>The MIT License (MIT)</name>
 			<url>https://opensource.org/licenses/mit-license.php</url>
 		</license>
@@ -67,9 +66,9 @@
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:https://github.com/admiralsmaster/taxapi.git</connection>
-		<developerConnection>scm:git:https://admiralsmaster@github.com/admiralsmaster/taxapi.git</developerConnection>
-		<url>https://github.com/admiralsmaster/taxapi.git</url>
+		<connection>scm:git:git://github.com/admiralsmaster/taxapi.git</connection>
+		<developerConnection>scm:git:ssh://github.com:admiralsmaster/taxapi.git</developerConnection>
+		<url>http://github.com/admiralsmaster/taxapi/tree/master</url>
 	</scm>
 
 	<properties>
