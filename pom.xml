@@ -72,7 +72,8 @@
 	</scm>
 
 	<properties>
-		<project.java.version>1.7</project.java.version>
+		<project.java.version>1.8</project.java.version>
+		<project.java.version.plusone>1.9</project.java.version.plusone>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -101,7 +102,7 @@
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
-				<version>0.13.1</version>
+				<version>0.13.2</version>
 				<configuration>
 					<locale>en</locale>
 					<args>
@@ -238,7 +239,7 @@
 								<configuration>
 									<rules>
 										<requireJavaVersion>
-											<version>[${project.java.version},1.8)</version>
+											<version>[${project.java.version},${project.java.version.plusone})</version>
 										</requireJavaVersion>
 									</rules>
 								</configuration>
