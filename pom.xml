@@ -197,6 +197,9 @@
 						</reports>
 					</reportSet>
 				</reportSets>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
 			</plugin>
 		</plugins>
 	</reporting>
