@@ -4,7 +4,7 @@
 
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2017.0.0</version>
+	<version>2018.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>taxapi</name>
 
@@ -91,7 +91,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
+				<version>3.7.0</version>
 				<configuration>
 					<source>${project.java.version}</source>
 					<target>${project.java.version}</target>
@@ -148,6 +148,25 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-site-plugin</artifactId>
+    			<version>3.6</version>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+                <configuration>
+                   <archive>
+                        <manifestEntries>
+                            <Automatic-Module-Name>info.kuechler.bmf.taxapi</Automatic-Module-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
@@ -277,7 +296,7 @@
 					<plugin>
 						<groupId>org.sonatype.plugins</groupId>
 						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.7</version>
+						<version>1.6.8</version>
 						<extensions>true</extensions>
 						<configuration>
 							<serverId>ossrh</serverId>
