@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk1.8.0_131\jre\..\bin\javadoc.exe" -J-Dhttp.proxySet=true -J-Dhttp.proxyHost=proxy.mms-dresden.de -J-Dhttp.proxyPort=8080 "-J-Dhttp.nonProxyHosts=\"10.48.195.77\"" @options @packages
