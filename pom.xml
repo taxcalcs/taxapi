@@ -43,7 +43,7 @@
 		mvn nexus-staging:release -P release
 		
 		Deploy site to github:
-		mvn clean site
+		mvn clean site -P deploy-site
 	 -->
 	<url>https://github.com/admiralsmaster/taxapi</url>
 	<description>Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/</description>
@@ -75,6 +75,7 @@
 		<project.java.version>1.8</project.java.version>
 		<project.java.version.plusone>1.9</project.java.version.plusone>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<github.global.server>github</github.global.server>
 	</properties>
 
 	<dependencies>
@@ -102,7 +103,7 @@
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
-				<version>0.13.2</version>
+				<version>0.13.3</version>
 				<configuration>
 					<locale>en</locale>
 					<args>
@@ -113,7 +114,7 @@
 						<plugin>
 							<groupId>com.github.jaxb-xew-plugin</groupId>
 							<artifactId>jaxb-xew-plugin</artifactId>
-							<version>1.7</version>
+							<version>1.9</version>
 						</plugin>
 					</plugins>
 				</configuration>
@@ -123,29 +124,6 @@
 						<goals>
 							<goal>generate</goal>
 						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- site deployment to github -->
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.12</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-						<configuration>
-							<server>github</server>
-							<message>Building site</message>
-							<path>${site.path}</path>
-							<merge>true</merge>
-							<repositoryName>taxapi</repositoryName>
-							<repositoryOwner>admiralsmaster</repositoryOwner>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -205,6 +183,34 @@
 	</reporting>
 
 	<profiles>
+		<profile>
+			<id>deploy-site</id>
+			<build>
+				<plugins>
+					<!-- site deployment to github -->
+					<plugin>
+						<groupId>com.github.github</groupId>
+						<artifactId>site-maven-plugin</artifactId>
+						<version>0.12</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>site</goal>
+								</goals>
+								<phase>site</phase>
+								<configuration>
+									<server>github</server>
+									<message>Building site</message>
+									<repositoryName>taxapi</repositoryName>
+									<repositoryOwner>admiralsmaster</repositoryOwner>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		
 		<profile>
 			<!-- profile for release, local development is faster w/o this plugins -->
 			<id>release</id>

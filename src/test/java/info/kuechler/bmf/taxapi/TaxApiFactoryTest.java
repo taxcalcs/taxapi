@@ -43,7 +43,8 @@ public class TaxApiFactoryTest {
 
                         { "https://www.bmf-steuerrechner.de/interface/2016V1.jsp", "0", "2016" },
                         
-                        { "https://www.bmf-steuerrechner.de/interface/LSt2017.jsp", "0", "2017" }
+                        { "https://www.bmf-steuerrechner.de/interface/LSt2017.jsp", "0", "2017" },
+                        { "https://www.bmf-steuerrechner.de/interface/LSt2018.jsp", "0", "2018" }
 
         });
     }
