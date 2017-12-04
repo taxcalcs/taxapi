@@ -1,17 +1,21 @@
 # taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8033ff7d9d3446e7b6b4320f43e74221)](https://www.codacy.com/app/github-ariel/taxapi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=admiralsmaster/taxapi&amp;utm_campaign=Badge_Grade) [![version](https://img.shields.io/maven-central/v/info.kuechler.bmf.taxapi/taxapi.svg)](http://search.maven.org/#search|gav|1|g%3A%22info.kuechler.bmf.taxapi%22%20AND%20a%3A%22taxapi%22) 
 
-Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.
 
+```diff
+- Version 2018 has been changed to Java 8.
+```
+
+Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.  
 Please respect the terms of use of this website (for tests only).
 
 This artifact contains a XSD and the generated JAXB classes for the service answer.
 
-[Javadoc](https://admiralsmaster.github.io/taxapi/apidocs/)
-
+[Javadoc](https://admiralsmaster.github.io/taxapi/apidocs/)  
 [Site](https://admiralsmaster.github.io/taxapi/)
 
-For tax calculation in your project see project [taxcalculator](https://github.com/admiralsmaster/taxcalculator).
+JDK 9 module name: *info.kuechler.bmf.taxapi*
 
+For tax calculation in your project see project [taxcalculator](https://github.com/admiralsmaster/taxcalculator).
 
 ## Usage
 
