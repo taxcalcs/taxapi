@@ -25,7 +25,7 @@ Use the maven dependency:
 <dependency>
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2018.0.0</version>
+	<version>2018.1.0</version>
 </dependency>
 ```
 or [other build tools](https://admiralsmaster.github.io/taxapi/dependency-info.html)
@@ -54,8 +54,8 @@ info.kuechler.bmf.taxapi.Type
 TaxApiFactory is a class to provide the test URLs which returns the XML.
 
 ```java
-// returns "http://www.bmf-steuerrechner.de/interface/LSt2017.jsp"
-TaxApiFactory.getUrl(0, 2017);
+// returns "http://www.bmf-steuerrechner.de/interface/2018Version1.xhtml?code=Lohn2018"
+TaxApiFactory.getUrl(0, 2018);
 ```
 
 ## Example Answer
@@ -64,7 +64,10 @@ From: https://www.bmf-steuerrechner.de/
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-  <lohnsteuer jahr="2017">
+<lohnsteuer jahr="2018">
+  <information>
+Die Berechnung ist nach den PAP 2018 erfolgt. Die Berechnung dient lediglich der Qualitätssicherung. Die Externe Schnittstelle des Lohn- und Einkommensteuerrechner ist also nur für die Überprüfung ihrer Rechnung bestimmt und nicht dazu bestimmt, die Berechnung über ihn abzuwickeln.
+  </information>
   <eingaben>
     <eingabe name="STKL" value="1" status="ok" />
     <eingabe name="LZZ" value="1" status="ok" />
@@ -74,8 +77,8 @@ From: https://www.bmf-steuerrechner.de/
     <ausgabe name="BK" value="0" type="STANDARD" />
     <ausgabe name="BKS" value="0" type="STANDARD" />
     <ausgabe name="BKV" value="0" type="STANDARD" />
-    <ausgabe name="LSTLZZ" value="260100" type="STANDARD" />
-    <ausgabe name="SOLZLZZ" value="14305" type="STANDARD" />
+    <ausgabe name="LSTLZZ" value="252500" type="STANDARD" />
+    <ausgabe name="SOLZLZZ" value="13887" type="STANDARD" />
     <ausgabe name="SOLZS" value="0" type="STANDARD" />
     <ausgabe name="SOLZV" value="0" type="STANDARD" />
     <ausgabe name="STS" value="0" type="STANDARD" />
@@ -85,7 +88,7 @@ From: https://www.bmf-steuerrechner.de/
     <ausgabe name="VFRB" value="100000" type="DBA" />
     <ausgabe name="VFRBS1" value="0" type="DBA" />
     <ausgabe name="VFRBS2" value="0" type="DBA" />
-    <ausgabe name="WVFRB" value="1148500" type="DBA" />
+    <ausgabe name="WVFRB" value="1122100" type="DBA" />
     <ausgabe name="WVFRBO" value="0" type="DBA" />
     <ausgabe name="WVFRBM" value="0" type="DBA" />
   </ausgaben>
@@ -94,6 +97,7 @@ From: https://www.bmf-steuerrechner.de/
 
 ## Changelog
 
+* 2018.1.0 May 2nd, 2018: API change #5
 * 2018.0.0 December 1st, 2017: update to 2018
 * 2017.0.0 November 30th, 2016: update to 2017
 * 2016.0.1 October 4th, 2016: Make objects serializable
