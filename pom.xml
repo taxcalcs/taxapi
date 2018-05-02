@@ -4,7 +4,7 @@
 
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2018.0.0</version>
+	<version>2018.1.0</version>
 	<packaging>jar</packaging>
 	<name>taxapi</name>
 
@@ -131,13 +131,13 @@
 			<plugin>
     			<groupId>org.apache.maven.plugins</groupId>
     			<artifactId>maven-site-plugin</artifactId>
-    			<version>3.6</version>
+    			<version>3.7.1</version>
 			</plugin>
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.0.2</version>
+				<version>3.1.0</version>
                 <configuration>
                    <archive>
                         <manifestEntries>
@@ -159,7 +159,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.4</version>
+				<version>3.0.0</version>
 				<reportSets>
 					<reportSet>
 						<reports>
@@ -275,7 +275,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.10.4</version>
+						<version>3.0.0</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>

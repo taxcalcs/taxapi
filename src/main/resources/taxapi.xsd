@@ -36,6 +36,7 @@
 	<xs:element name="lohnsteuer">
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element name="information" minOccurs="0" type="xs:string" />
 				<xs:element name="eingaben" type="eingaben" />
 				<xs:element name="ausgaben" type="ausgaben" />
 			</xs:sequence>
