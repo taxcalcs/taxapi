@@ -1,4 +1,4 @@
-# taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8033ff7d9d3446e7b6b4320f43e74221)](https://www.codacy.com/app/github-ariel/taxapi) [![version](https://img.shields.io/maven-central/v/info.kuechler.bmf.taxapi/taxapi.svg)](http://search.maven.org/#search|gav|1|g%3A%22info.kuechler.bmf.taxapi%22%20AND%20a%3A%22taxapi%22) 
+# taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![pipeline status](https://gitlab.com/taxcalculator/taxapi/badges/master/pipeline.svg)](https://gitlab.com/taxcalculator/taxapi/commits/master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8033ff7d9d3446e7b6b4320f43e74221)](https://www.codacy.com/app/github-ariel/taxapi) [![version](https://img.shields.io/maven-central/v/info.kuechler.bmf.taxapi/taxapi.svg)](http://search.maven.org/#search|gav|1|g%3A%22info.kuechler.bmf.taxapi%22%20AND%20a%3A%22taxapi%22) 
 
 
 ```diff
