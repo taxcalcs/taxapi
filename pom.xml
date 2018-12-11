@@ -314,7 +314,7 @@
 								<configuration>
 									<rules>
 										<requireJavaVersion>
-											<version>[${project.java.version}]</version>
+											<version>[1.8,1.9)</version>
 										</requireJavaVersion>
 									</rules>
 								</configuration>
