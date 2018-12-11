@@ -33,7 +33,8 @@ public class TaxApiFactoryTest {
                 arguments("https://www.bmf-steuerrechner.de/interface/2016Version1.xhtml", 0, 2016),
 
                 arguments("https://www.bmf-steuerrechner.de/interface/2017Version1.xhtml", 0, 2017),
-                arguments("https://www.bmf-steuerrechner.de/interface/2018Version1.xhtml", 0, 2018)
+                arguments("https://www.bmf-steuerrechner.de/interface/2018Version1.xhtml", 0, 2018),
+                arguments("https://www.bmf-steuerrechner.de/interface/2019Version1.xhtml", 0, 2019)
 
         );
     }
