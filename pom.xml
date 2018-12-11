@@ -4,7 +4,7 @@
 
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2019.0.0-SNAPSHOT</version>
+	<version>2019.0.0</version>
 	<packaging>jar</packaging>
 	<name>taxapi</name>
 
@@ -148,10 +148,11 @@
 				</executions>
 			</plugin>
 			
+			<!-- higher version to use maven-fluido-skin:1.6 for maven site -->
 			<plugin>
-    			<groupId>org.apache.maven.plugins</groupId>
-    			<artifactId>maven-site-plugin</artifactId>
-    			<version>3.7.1</version>
+	    			<groupId>org.apache.maven.plugins</groupId>
+	    			<artifactId>maven-site-plugin</artifactId>
+	    			<version>3.7.1</version>
 			</plugin>
 			
 			<plugin>
@@ -167,6 +168,7 @@
                 </configuration>
             </plugin>
             
+            <!-- surefire latest version for parameterized junit5 tests -->
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-surefire-plugin</artifactId>
