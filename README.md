@@ -25,7 +25,7 @@ Use the maven dependency:
 <dependency>
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2019.0.0</version>
+	<version>2020.0.0</version>
 </dependency>
 ```
 or [other build tools](https://admiralsmaster.github.io/taxapi/dependency-info.html)
@@ -97,6 +97,7 @@ Die Berechnung ist nach den PAP 2018 erfolgt. Die Berechnung dient lediglich der
 
 ## Changelog
 
+* 2020.0.0 December 16th, 2020: #11 update to 2020
 * 2019.0.0 December 11th, 2019: #6 update to 2019
 * 2018.1.0 May 2nd, 2018: API change #5
 * 2018.0.0 December 1st, 2017: update to 2018
