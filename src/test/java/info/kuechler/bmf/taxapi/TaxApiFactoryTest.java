@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class TaxApiFactoryTest {
 
-    static Stream<Arguments> dataProvider() {
+    public static Stream<Arguments> dataProvider() {
         return Stream.of( //
                 arguments("https://www.bmf-steuerrechner.de/interface/2006Version1.xhtml", 0, 2006),
                 arguments("https://www.bmf-steuerrechner.de/interface/2007Version1.xhtml", 0, 2007),

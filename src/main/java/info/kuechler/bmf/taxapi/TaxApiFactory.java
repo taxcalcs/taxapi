@@ -24,6 +24,7 @@ public class TaxApiFactory {
         }
         default:
             middle = "";
+            break;
         }
 
         return Integer.toString(year) + middle + "Version1";
