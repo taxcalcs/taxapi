@@ -12,10 +12,10 @@ cache:
     - .m2/repository/
     
 include:
-  template: SAST.gitlab-ci.yml
-  template: DAST.gitlab-ci.yml
-  template: Dependency-Scanning.gitlab-ci.yml
-  template: License-Management.gitlab-ci.yml
+  - template: SAST.gitlab-ci.yml
+  - template: DAST.gitlab-ci.yml
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: License-Management.gitlab-ci.yml
 
 build:jdk8:
   image: maven:3-jdk-8-alpine
