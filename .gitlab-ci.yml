@@ -10,6 +10,12 @@ variables:
 cache:
   paths:
     - .m2/repository/
+    
+include:
+  template: SAST.gitlab-ci.yml
+  template: DAST.gitlab-ci.yml
+  template: Dependency-Scanning.gitlab-ci.yml
+  template: License-Management.gitlab-ci.yml
 
 build:jdk8:
   image: maven:3-jdk-8-alpine
@@ -52,3 +58,40 @@ test:jdk11:
   stage: test
   script:
     - mvn $MAVEN_CLI_OPTS test
+    
+build:jdk12:
+  image: maven:3-jdk-12
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS compile
+
+test:jdk12:
+  image: maven:3-jdk-12
+  stage: test
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+
+build:jdk13:
+  image: maven:3-jdk-13
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS compile
+
+test:jdk13:
+  image: maven:3-jdk-13
+  stage: test
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+
+build:jdk14:
+  image: maven:3-jdk-14
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS compile
+
+test:jdk14:
+  image: maven:3-jdk-14
+  stage: test
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+
