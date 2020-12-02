@@ -1,11 +1,10 @@
 # taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9912b0971c164016a817a7835d3edc23)](https://www.codacy.com/app/github-ariel/taxapi) [![Known Vulnerabilities](https://snyk.io/test/github/admiralsmaster/taxapi/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/admiralsmaster/taxapi?targetFile=pom.xml) [![version](https://maven-badges.herokuapp.com/maven-central/info.kuechler.bmf.taxapi/taxapi/badge.svg)](http://search.maven.org/#search|gav|1|g%3A%22info.kuechler.bmf.taxapi%22%20AND%20a%3A%22taxapi%22) 
 
-
 ```diff
 - Version 2018 has been changed to Java 8.
 ```
 
-Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/.  
+Generated API classes for direct server communication with <https://www.bmf-steuerrechner.de/>.
 Please respect the terms of use of this website (for tests only).
 
 This artifact contains a XSD and the generated JAXB classes for the service answer.
@@ -60,7 +59,7 @@ TaxApiFactory.getUrl(0, 2018);
 
 ## Example Answer
 
-From: https://www.bmf-steuerrechner.de/
+From: <https://www.bmf-steuerrechner.de/>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -97,10 +96,10 @@ Die Berechnung ist nach den PAP 2018 erfolgt. Die Berechnung dient lediglich der
 
 ## Changelog
 
-* 2020.0.0 December 16th, 2020: #11 update to 2020
-* 2019.0.0 December 11th, 2019: #6 update to 2019
-* 2018.1.0 May 2nd, 2018: API change #5
-* 2018.0.0 December 1st, 2017: update to 2018
-* 2017.0.0 November 30th, 2016: update to 2017
-* 2016.0.1 October 4th, 2016: Make objects serializable
-* 2016.0.0 September 18th, 2016: Initial Version
+*   2020.0.0 December 16th, 2020: \#11 update to 2020
+*   2019.0.0 December 11th, 2019: \#6 update to 2019
+*   2018.1.0 May 2nd, 2018: API change \#5
+*   2018.0.0 December 1st, 2017: update to 2018
+*   2017.0.0 November 30th, 2016: update to 2017
+*   2016.0.1 October 4th, 2016: Make objects serializable
+*   2016.0.0 September 18th, 2016: Initial Version
