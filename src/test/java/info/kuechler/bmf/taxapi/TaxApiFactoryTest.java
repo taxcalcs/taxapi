@@ -14,29 +14,8 @@ public class TaxApiFactoryTest {
 
     public static Stream<Arguments> dataProvider() {
         return Stream.of( //
-                arguments("https://www.bmf-steuerrechner.de/interface/2006Version1.xhtml", 0, 2006),
-                arguments("https://www.bmf-steuerrechner.de/interface/2007Version1.xhtml", 0, 2007),
-                arguments("https://www.bmf-steuerrechner.de/interface/2008Version1.xhtml", 0, 2008),
-                arguments("https://www.bmf-steuerrechner.de/interface/2009Version1.xhtml", 0, 2009),
-                arguments("https://www.bmf-steuerrechner.de/interface/2010Version1.xhtml", 0, 2010),
-
-                arguments("https://www.bmf-steuerrechner.de/interface/2011bisNovVersion1.xhtml", 1, 2011),
-                arguments("https://www.bmf-steuerrechner.de/interface/2011DezVersion1.xhtml", 0, 2011),
-
-                arguments("https://www.bmf-steuerrechner.de/interface/2012Version1.xhtml", 0, 2012),
-                arguments("https://www.bmf-steuerrechner.de/interface/2013Version1.xhtml", 0, 2013),
-                arguments("https://www.bmf-steuerrechner.de/interface/2014Version1.xhtml", 0, 2014),
-
-                arguments("https://www.bmf-steuerrechner.de/interface/2015bisNovVersion1.xhtml", 1, 2015),
-                arguments("https://www.bmf-steuerrechner.de/interface/2015DezVersion1.xhtml", 0, 2015),
-
-                arguments("https://www.bmf-steuerrechner.de/interface/2016Version1.xhtml", 0, 2016),
-
-                arguments("https://www.bmf-steuerrechner.de/interface/2017Version1.xhtml", 0, 2017),
-                arguments("https://www.bmf-steuerrechner.de/interface/2018Version1.xhtml", 0, 2018),
-                arguments("https://www.bmf-steuerrechner.de/interface/2019Version1.xhtml", 0, 2019),
-                arguments("https://www.bmf-steuerrechner.de/interface/2020Version1.xhtml", 0, 2020)
-
+                arguments("https://www.bmf-steuerrechner.de/interface/2020Version1.xhtml", 0, 2020),
+                arguments("https://www.bmf-steuerrechner.de/interface/2021Version1.xhtml", 0, 2021)
         );
     }
 

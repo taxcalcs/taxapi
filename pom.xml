@@ -4,47 +4,15 @@
 
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2020.0.0</version>
 	<packaging>jar</packaging>
 	<name>taxapi</name>
+	
+	<parent>
+		<groupId>info.kuechler.bmf</groupId>
+		<artifactId>modules</artifactId>
+		<version>2021.0.0</version>
+	</parent>
 
-	<!-- 
-		settings.xml for maven central, sign and github site deployment:
-		
-		<settings>
-			<servers>
-				<server>
-					<id>ossrh</id>
-					<username>username</username>
-					<password>password</password>
-				</server>
-				<server>
-					<id>github</id>
-					<username>username</username>
-					<password>password</password> 
-				</server> 
-			</servers>
-			<profiles>
-				<profile>
-					<id>ossrh</id>
-					<activation>
-						<activeByDefault>true</activeByDefault>
-					</activation>
-					<properties>
-						<gpg.executable>/usr/local/bin/gpg</gpg.executable>
-						<gpg.passphrase>passphrase</gpg.passphrase>
-					</properties>
-				</profile>
-			</profiles>
-		</settings>
-
-		release into maven central:
-		mvn clean deploy -P release, <autoReleaseAfterClose> have to set to "false"
-		mvn nexus-staging:release -P release
-		
-		Deploy site to github:
-		mvn clean site -P deploy-site
-	 -->
 	<url>https://github.com/admiralsmaster/taxapi</url>
 	<description>Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/</description>
 
@@ -70,59 +38,12 @@
 		<developerConnection>scm:git:ssh://github.com:admiralsmaster/taxapi.git</developerConnection>
 		<url>http://github.com/admiralsmaster/taxapi/tree/master</url>
 	</scm>
-
-	<properties>
-		<project.java.version>1.8</project.java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.junit.jupiter.version>5.5.2</org.junit.jupiter.version>
-		<org.junit.platform.version>1.5.2</org.junit.platform.version>
-		<javax.xml.bind.version>2.4.0-b180830.0359</javax.xml.bind.version>
-	</properties>
-
-	<dependencies>
-		<!-- test dependencies -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>${org.junit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-		    <groupId>org.junit.jupiter</groupId>
-		    <artifactId>junit-jupiter-params</artifactId>
-		    <version>${org.junit.jupiter.version}</version>
-		    <scope>test</scope>
-		</dependency>
-		<dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${org.junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-launcher</artifactId>
-			<version>${org.junit.platform.version}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>${project.java.version}</source>
-					<target>${project.java.version}</target>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
-				<version>0.14.0</version>
 				<configuration>
 					<locale>en</locale>
 					<args>
@@ -134,7 +55,7 @@
 						<plugin>
 							<groupId>com.github.jaxb-xew-plugin</groupId>
 							<artifactId>jaxb-xew-plugin</artifactId>
-							<version>1.11</version>
+							<version>${com.github.jaxb-xew-plugin.version}</version>
 						</plugin>
 					</plugins>
 				</configuration>
@@ -148,17 +69,9 @@
 				</executions>
 			</plugin>
 			
-			<!-- higher version to use maven-fluido-skin:1.6 for maven site -->
-			<plugin>
-	    			<groupId>org.apache.maven.plugins</groupId>
-	    			<artifactId>maven-site-plugin</artifactId>
-	    			<version>3.8.2</version>
-			</plugin>
-			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
                 <configuration>
                    <archive>
                         <manifestEntries>
@@ -167,236 +80,30 @@
                     </archive>
                 </configuration>
             </plugin>
-            
-            <!-- surefire latest version for parameterized junit5 tests -->
-			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-surefire-plugin</artifactId>
-			    <version>2.22.2</version>
-				<executions>
-					<execution>
-						<id>default-test</id>
-						<phase>test</phase>
-						<goals>
-							<goal>test</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.1.1</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>javadoc</report>
-							<report>test-javadoc</report>
-						</reports>
-					</reportSet>
-					<reportSet>
-						<id>aggregate</id>
-						<inherited>false</inherited>
-						<reports>
-							<report>aggregate</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
-
-	<profiles>
-		<profile>
-			<id>deploy-site</id>
-			<build>
-				<plugins>
-					<!-- site deployment to github -->
-					<plugin>
-						<groupId>com.github.github</groupId>
-						<artifactId>site-maven-plugin</artifactId>
-						<version>0.12</version>
-						<executions>
-							<execution>
-								<goals>
-									<goal>site</goal>
-								</goals>
-								<phase>site</phase>
-								<configuration>
-									<server>github</server>
-									<message>Building site</message>
-									<repositoryName>taxapi</repositoryName>
-									<repositoryOwner>admiralsmaster</repositoryOwner>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		
-		<profile>
-			<!-- profile for jdk9 -->
-			<id>jdk9</id>
-			<activation>
-				<jdk>9</jdk>
-			</activation>
-			<dependencies>
-				<dependency>
-				    <groupId>javax.xml.bind</groupId>
-				    <artifactId>jaxb-api</artifactId>
-				    <version>${javax.xml.bind.version}</version>
-				</dependency>
-			</dependencies>
-		</profile>
-		<profile>
-			<!-- profile for jdk10 -->
-			<id>jdk10</id>
-			<activation>
-				<jdk>10</jdk>
-			</activation>
-			<dependencies>
-				<dependency>
-				    <groupId>javax.xml.bind</groupId>
-				    <artifactId>jaxb-api</artifactId>
-				    <version>${javax.xml.bind.version}</version>
-				</dependency>
-			</dependencies>
-		</profile>
-		<profile>
-			<!-- profile for jdk11 -->
-			<id>jdk11</id>
-			<activation>
-				<jdk>11</jdk>
-			</activation>
-			<dependencies>
-				<dependency>
-				    <groupId>javax.xml.bind</groupId>
-				    <artifactId>jaxb-api</artifactId>
-				    <version>${javax.xml.bind.version}</version>
-				</dependency>
-			</dependencies>
-		</profile>
-		
-		<profile>
-			<!-- profile for release, local development is faster w/o this plugins -->
-			<id>release</id>
-
-			<!-- snapshot repository for release -->
-			<distributionManagement>
-				<snapshotRepository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-				</snapshotRepository>
-			</distributionManagement>
-
-			<build>
-				<plugins>
-
-					<!-- right java version, no release with higher java version -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-enforcer-plugin</artifactId>
-						<version>1.4.1</version>
-						<executions>
-							<execution>
-								<id>display-info</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>display-info</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>enforce-versions</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>enforce</goal>
-								</goals>
-								<configuration>
-									<rules>
-										<requireJavaVersion>
-											<version>[1.8,1.9)</version>
-										</requireJavaVersion>
-									</rules>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
-					<!-- create source jar -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>3.2.0</version>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-
-					<!-- create javadoc jar -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>3.1.1</version>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-
-					<!-- sign files -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-
-					<!-- plugin for release -->
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.8</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>false</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
-
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+	<dependencies>
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-params</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>
