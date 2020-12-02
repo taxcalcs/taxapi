@@ -13,13 +13,13 @@
 		<version>2021.0.0</version>
 	</parent>
 
-	<url>https://github.com/admiralsmaster/taxapi</url>
+	<url>https://github.com/taxcalcs/taxapi</url>
 	<description>Generated API classes for direct server communication with https://www.bmf-steuerrechner.de/</description>
 
 	<inceptionYear>2016</inceptionYear>
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/admiralsmaster/taxapi/issues</url>
+		<url>https://github.com/taxcalcs/taxapi/issues</url>
 	</issueManagement>
 	<licenses>
 		<license>
@@ -34,9 +34,9 @@
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:git://github.com/admiralsmaster/taxapi.git</connection>
-		<developerConnection>scm:git:ssh://github.com:admiralsmaster/taxapi.git</developerConnection>
-		<url>http://github.com/admiralsmaster/taxapi/tree/master</url>
+		<connection>scm:git:git://github.com/taxcalcs/taxapi.git</connection>
+		<developerConnection>scm:git:ssh://github.com:taxcalcs/taxapi.git</developerConnection>
+		<url>http://github.com/taxcalcs/taxapi/tree/master</url>
 	</scm>
 	
 	<build>
