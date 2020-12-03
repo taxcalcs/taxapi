@@ -9,12 +9,13 @@ Please respect the terms of use of this website (for tests only).
 
 This artifact contains a XSD and the generated JAXB classes for the service answer.
 
-[Javadoc](https://admiralsmaster.github.io/taxapi/apidocs/)  
-[Site](https://admiralsmaster.github.io/taxapi/)
+Project: <https://taxcalcs.github.io/taxapi/>
+
+Javadoc: <https://taxcalcs.github.io/taxapi/apidocs/>
 
 JDK 9 module name: *info.kuechler.bmf.taxapi*
 
-For tax calculation in your project see project [taxcalculator](https://github.com/admiralsmaster/taxcalculator).
+For tax calculation in your project see project [taxcalculator](https://github.com/taxcalcs/taxcalculator).
 
 ## Usage
 
