@@ -1,4 +1,4 @@
-# taxapi [![Build Status](https://travis-ci.org/admiralsmaster/taxapi.svg?branch=master)](https://travis-ci.org/admiralsmaster/taxapi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9912b0971c164016a817a7835d3edc23)](https://www.codacy.com/app/github-ariel/taxapi) [![Known Vulnerabilities](https://snyk.io/test/github/admiralsmaster/taxapi/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/admiralsmaster/taxapi?targetFile=pom.xml) [![version](https://maven-badges.herokuapp.com/maven-central/info.kuechler.bmf.taxapi/taxapi/badge.svg)](http://search.maven.org/#search|gav|1|g%3A%22info.kuechler.bmf.taxapi%22%20AND%20a%3A%22taxapi%22) 
+# taxapi [![Build Status](https://travis-ci.org/taxcalcs/taxapi.svg?branch=master)](https://travis-ci.org/taxcalcs/taxapi) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ed625cdbf61644a58c486d68822754d2)](https://www.codacy.com/gh/taxcalcs/taxapi/dashboard) [![Known Vulnerabilities](https://snyk.io/test/github/taxcalcs/taxapi/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/taxcalcs/taxapi?targetFile=pom.xml) [![version](https://maven-badges.herokuapp.com/maven-central/info.kuechler.bmf.taxapi/taxapi/badge.svg)](http://search.maven.org/#search|gav|1|g%3A%22info.kuechler.bmf.taxapi%22%20AND%20a%3A%22taxapi%22) 
 
 ```diff
 - Version 2018 has been changed to Java 8.
@@ -24,7 +24,7 @@ Use the maven dependency:
 <dependency>
 	<groupId>info.kuechler.bmf.taxapi</groupId>
 	<artifactId>taxapi</artifactId>
-	<version>2020.0.0</version>
+	<version>2021.0.0</version>
 </dependency>
 ```
 or [other build tools](https://admiralsmaster.github.io/taxapi/dependency-info.html)
@@ -96,8 +96,9 @@ Die Berechnung ist nach den PAP 2018 erfolgt. Die Berechnung dient lediglich der
 
 ## Changelog
 
-*   2020.0.0 December 16th, 2020: \#11 update to 2020
-*   2019.0.0 December 11th, 2019: \#6 update to 2019
+*   2021.0.0 December 2nd, 2020: update to 2021
+*   2020.0.0 December 16th, 2019: \#11 update to 2020
+*   2019.0.0 December 11th, 2018: \#6 update to 2019
 *   2018.1.0 May 2nd, 2018: API change \#5
 *   2018.0.0 December 1st, 2017: update to 2018
 *   2017.0.0 November 30th, 2016: update to 2017
