@@ -14,8 +14,8 @@ public class TaxApiFactoryTest {
 
     public static Stream<Arguments> dataProvider() {
         return Stream.of( //
-                arguments("https://www.bmf-steuerrechner.de/interface/2020Version1.xhtml", 0, 2020),
-                arguments("https://www.bmf-steuerrechner.de/interface/2021Version1.xhtml", 0, 2021)
+                arguments("https://www.bmf-steuerrechner.de/interface/2021Version1.xhtml", 0, 2021),
+                arguments("https://www.bmf-steuerrechner.de/interface/2022Version1.xhtml", 0, 2022)
         );
     }
 
