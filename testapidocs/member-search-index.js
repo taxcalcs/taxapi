@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"info.kuechler.bmf.taxapi","c":"TaxApiFactoryTest","l":"dataProvider()"},{"p":"info.kuechler.bmf.taxapi","c":"TaxApiFactoryTest","l":"TaxApiFactoryTest()","url":"%3Cinit%3E()"},{"p":"info.kuechler.bmf.taxapi","c":"TaxApiFactoryTest","l":"testGetUrl(String, int, int)","url":"testGetUrl(java.lang.String,int,int)"}]

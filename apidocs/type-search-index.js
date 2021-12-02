@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"info.kuechler.bmf.taxapi","l":"Ausgabe"},{"p":"info.kuechler.bmf.taxapi","l":"Eingabe"},{"p":"info.kuechler.bmf.taxapi","l":"Lohnsteuer"},{"p":"info.kuechler.bmf.taxapi","l":"ObjectFactory"},{"p":"info.kuechler.bmf.taxapi","l":"TaxApiFactory"},{"p":"info.kuechler.bmf.taxapi","l":"Type"}]
