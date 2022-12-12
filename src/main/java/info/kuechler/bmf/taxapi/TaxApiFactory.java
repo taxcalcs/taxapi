@@ -1,7 +1,7 @@
 package info.kuechler.bmf.taxapi;
 
 public class TaxApiFactory {
-    protected static final String CODE = "2022eP";
+    protected static final String CODE = "ext2023";
 
     public static String getUrl(final int month, final int year) {
         return "https://www.bmf-steuerrechner.de/interface/" + getYearKey(month, year) + ".xhtml?code=" + CODE;
