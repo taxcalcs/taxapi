@@ -8,8 +8,8 @@ public class TaxApiFactory {
     }
 
     protected static String getYearKey(final int month, final int year) {
-        if (year < 2019 || month > 12 || month < 0) {
-            throw new IllegalArgumentException("Month have to be between 0 and 12, year >= 2019");
+        if (year < 2022 || month > 12 || month < 0) {
+            throw new IllegalArgumentException("Month have to be between 0 and 12, year >= 2022");
         }
         return Integer.toString(year) + "Version1";
     }
